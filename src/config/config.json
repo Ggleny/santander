@@ -4,14 +4,13 @@
         "app_name": "Santander Test",
         "app_desc": "Interview Test",
         "node_port": 3000,
-        "json_indentation": 4,
         "base_url": "https://jsonmock.hackerrank.com/api",
-        "log":"debug"
+        "log": "debug"
     },
     "production": {
         "config_id": "production",
-        "node_port": 80,
+        "node_port": 3000,
         "base_url": "https://jsonmock.hackerrank.com/api",
-        "log":"info"
+        "log": "info"
     }
 }
