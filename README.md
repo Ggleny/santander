@@ -32,6 +32,12 @@ docker-compose stop
 docker-compose down 
 ```
 
+#### API 
+
+```
+GET http://localhost:5000/
+```
+
 Testing
 -------------
 ### Run test
