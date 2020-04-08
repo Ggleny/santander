@@ -34,9 +34,8 @@ docker-compose down
 
 #### API 
 
-```
-GET http://localhost:5000/
-```
+http://localhost:5000/api-docs/
+
 
 Testing
 -------------
