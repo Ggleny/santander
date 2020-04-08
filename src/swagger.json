@@ -1,0 +1,105 @@
+{
+    "info": {
+      "title": "Test Santander API",
+      "version": "1.0.0",
+      "description": "Test Santander"
+    },
+    "host": "localhost:5000",
+    "basePath": "/api/v1",
+    "swagger": "2.0",
+    "contact": {
+        "email": "ggianirodriguez@gmail.com"
+    },
+    "tags": [
+        {
+          "name": "author",
+          "description": "Access to author articles"
+        }
+    ],
+    "schemes":["http"],
+    "produces": [
+        "application/json"
+    ],    
+    "paths": { 
+        "/author_history?author={author}": {
+            "get": {
+              "tags": [
+                "author"
+              ],
+              "summary": "Find articles history",
+              "description": "return multiples articles",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "author",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "successful operation",
+                  "content":{
+                    "application/json":{
+                        "schema": {
+                            "$ref": "#/definitions/Article"
+                        }
+                    }
+                  },
+                  "schema": {
+                    "$ref": "#/definitions/Article"
+                  }
+                },
+                "400": {
+                  "description": "Invalid authorId value"
+                },
+                "404": {
+                    "description": "Author not found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                }
+                
+              }
+            }
+        }
+    },
+    "definitions": {
+        "Article": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "integer",
+                "format": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              },
+              "num_comments": {
+                "type": "integer"
+              },
+              "story_id": {
+                "type": "integer"
+              },
+              "story_title": {
+                "type": "string"
+              },
+              "story_url": {
+                "type": "string"
+              }
+            },
+            "json": {
+              "name": "Article"
+            }
+          }
+     },
+    "responses": { },
+    "parameters": { },
+    "securityDefinitions": { }
+  }

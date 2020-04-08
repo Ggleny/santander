@@ -1,4 +1,7 @@
 const express = require('express')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger.json')
+
 require('./config/config.js')
 
 const { createLogger, format, transports } = require('winston')
@@ -28,6 +31,8 @@ const logger = createLogger({
 global.logger = logger
 const app = express()
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+
 app.use(expressWinston.logger({
   transports: logConfig.transports,
   format: logConfig.format,
@@ -38,6 +43,6 @@ app.use(expressWinston.logger({
 }))
 
 // global.logger = logger;
-
-app.use(require('./routes/index'))
+app.use('/api/v1', require('./routes/index'))
+//app.use(require('./routes/index'))
 module.exports = app

@@ -3,13 +3,13 @@
         "config_id": "development",
         "app_name": "Santander Test",
         "app_desc": "Interview Test",
-        "node_port": 3000,
+        "node_port": 5000,
         "base_url": "https://jsonmock.hackerrank.com/api",
         "log": "debug"
     },
     "production": {
         "config_id": "production",
-        "node_port": 3000,
+        "node_port": 5000,
         "base_url": "https://jsonmock.hackerrank.com/api",
         "log": "info"
     }

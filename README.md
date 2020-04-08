@@ -7,7 +7,7 @@ Installation
 ### From this git reposity
 - Take git clone 
 ```
-git clone 
+git clone git@github.com:Ggleny/santander.git
 ```
 #### Run manually
 - Install dependencies
