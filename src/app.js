@@ -1,7 +1,6 @@
 const express = require('express')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json')
-
 require('./config/config.js')
 
 const { createLogger, format, transports } = require('winston')
@@ -42,6 +41,9 @@ app.use(expressWinston.logger({
   ignoreRoute: function (req, res) { return false } // optional: allows to skip some log messages based on request and/or response
 }))
 
+app.use("/", function(req, res, next) {
+  res.redirect('/api-docs/')
+})
 // global.logger = logger;
 app.use('/api/v1', require('./routes/index'))
 //app.use(require('./routes/index'))
